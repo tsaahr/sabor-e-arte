@@ -38,17 +38,14 @@ export default function Header() {
           />
         </div>
         <div className="">
-          <nav className="flex item-center gap-6 text-lg ">
-            <Link href="#" className="hover:text-yellow-400">
-              Início
-            </Link>
-            <Link href="#" className="hover:text-yellow-400">
-              Sobre
-            </Link>
-            <Link href="#" className="hover:text-yellow-400">
-              Contato
-            </Link>
-          </nav>
+            <nav className="flex items-center gap-6 text-lg">
+              <Link href="/" className="hover:text-yellow-400">
+                Início
+              </Link>
+              <Link href="/sobre" className="hover:text-yellow-400">
+                Sobre
+              </Link>
+            </nav>
         </div>
       </div>
     </header>
