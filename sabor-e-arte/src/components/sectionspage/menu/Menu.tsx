@@ -76,50 +76,59 @@ export default function Menu() {
   const [activeTab, setActiveTab] = useState<keyof typeof menuData>('Hamburguer')
 
   return (
-    <section className="w-full text-black px-1 py-1 md:px-32 md:py-16 lg:px-50 " >
-      <div className="bg-[url('/images/cardapio.jpeg')] bg-cover bg-center w-full py-16 rounded-lg">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Nosso Cardápio</h2>
+<section className="relative w-full min-h-screen text-black" id="menu">
+  {/* Imagem de fundo */}
+  <div className="absolute inset-0 z-0" />
 
-          {/* Abas */}
-          <div className="flex justify-center gap-4 mb-10 flex-wrap">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={`px-4 py-2 rounded-full font-medium border transition ${
-                  activeTab === category
-                    ? 'bg-yellow-500 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-yellow-100'
-                }`}
-                onClick={() => setActiveTab(category)}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+  {/* Camada escura opcional por cima da imagem */}
+  <div className="absolute inset-0 bg-black/30 z-10" />
 
-          {/* Itens do menu */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {menuData[activeTab].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white/80 backdrop-blur rounded-xl shadow hover:shadow-lg transition"
-              >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-48 object-cover rounded-t-xl"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold">{item.name}</h3>
-                  <p className="text-sm text-gray-600">{item.description}</p>
-                  <p className="text-yellow-600 font-bold mt-2">{item.price}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+  {/* "Folha" central com o cardápio */}
+  <div className="relative z-20 flex justify-center py-16 px-4">
+    <div className="w-full max-w-3xl bg-white/90 backdrop-blur-md rounded-xl shadow-xl p-8">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
+        Nosso Cardápio
+      </h2>
+
+      {/* Abas */}
+      <div className="flex justify-center gap-4 mb-10 flex-wrap">
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={`px-4 py-2 rounded-full font-medium border transition ${
+              activeTab === category
+                ? 'bg-yellow-500 text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-yellow-100'
+            }`}
+            onClick={() => setActiveTab(category)}
+          >
+            {category}
+          </button>
+        ))}
       </div>
-    </section>
+
+      {/* Itens do menu */}
+      <div className="grid sm:grid-cols-3 gap-6">
+        {menuData[activeTab].map((item, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-lg shadow-md hover:shadow-lg transition overflow-hidden"
+          >
+            <img
+              src={item.image}
+              alt={item.name}
+              className="w-full h-40 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">{item.name}</h3>
+              <p className="text-sm text-gray-600">{item.description}</p>
+              <p className="text-yellow-600 font-bold mt-2">{item.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
   )
 }
