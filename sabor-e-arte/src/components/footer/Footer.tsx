@@ -19,7 +19,7 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-3 text-yellow-400">Navegação</h3>
           <ul className="space-y-2 text-gray-300">
-            <li><Link href="/" className="hover:text-yellow-400">Início</Link></li>
+            <li><Link href="/" className="hover:text-yellow-400">Menu</Link></li>
             <li><Link href="/sobre" className="hover:text-yellow-400">Sobre</Link></li>
           </ul>
 

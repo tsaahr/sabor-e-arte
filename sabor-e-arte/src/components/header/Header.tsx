@@ -40,7 +40,7 @@ export default function Header() {
         <div className="">
             <nav className="flex items-center gap-6 text-lg">
               <Link href="/" className="hover:text-yellow-400">
-                Início
+                Menu
               </Link>
               <Link href="/sobre" className="hover:text-yellow-400">
                 Sobre
