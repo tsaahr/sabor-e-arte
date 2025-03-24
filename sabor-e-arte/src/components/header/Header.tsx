@@ -10,7 +10,14 @@ export default function Header() {
       <div className="flex items-center px-4 py-2 border-b border-gray-800 justify-end">
         <div>🕒 Aberto: 08:00 - 21:00</div>
         <div className="flex items-center gap-4">
-          <div>📍 Socowisk - Rio Grande</div>
+          <a
+            href="https://www.google.com/maps/place/Praça+Rio+Grande+Shopping+Center/@-32.0557998,-52.1475505,17.16z/data=!4m6!3m5!1s0x95119a32ccceed31:0x9106a3a6d0622e07!8m2!3d-32.0517257!4d-52.148484!16s%2Fg%2F11bbrj_wcb?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-400 transition"
+          >
+            📍 Praça Shopping - Rio Grande RS
+          </a>
           <div className="flex gap-2">
             <FaFacebookF className="hover:text-yellow-400 cursor-pointer" />
             <FaTwitter className="hover:text-yellow-400 cursor-pointer" />
@@ -37,12 +44,6 @@ export default function Header() {
             </Link>
             <Link href="#" className="hover:text-yellow-400">
               Sobre
-            </Link>
-            <Link href="#" className="hover:text-yellow-400">
-              Cardápio
-            </Link>
-            <Link href="#" className="hover:text-yellow-400">
-              Blog
             </Link>
             <Link href="#" className="hover:text-yellow-400">
               Contato

@@ -19,39 +19,75 @@ const menuData: MenuData = {
       name: "Hambúrguer Clássico",
       description: "Pão, carne 150g, queijo, alface, tomate e maionese da casa.",
       price: "R$ 24,90",
-      image: "https://picsum.photos/seed/hamburguer1/400/300",
+      image: "/images/lanches/HamburguerClassico.webp",
     },
     {
       name: "Cheddar Bacon",
       description: "Carne, cheddar cremoso e bacon crocante.",
       price: "R$ 29,90",
-      image: "https://picsum.photos/seed/hamburguer2/400/300",
+      image: "/images/lanches/CheddarBacon.jpg",
     },
     {
-      name: "Cheddar Bacon",
-      description: "Carne, cheddar cremoso e bacon crocante.",
-      price: "R$ 29,90",
-      image: "https://picsum.photos/seed/hamburguer2/400/300",
+      name: "Duplo Smash",
+      description: "Dois smash burgers de 100g, queijo americano, picles e molho especial.",
+      price: "R$ 34,90",
+      image: "/images/lanches/DuploSmash.jpg",
     },
     {
-      name: "Cheddar Bacon",
-      description: "Carne, cheddar cremoso e bacon crocante.",
-      price: "R$ 29,90",
-      image: "https://picsum.photos/seed/hamburguer2/400/300",
-    }
+      name: "Veggie Burguer",
+      description: "Hambúrguer de grão-de-bico, alface, tomate e maionese vegana.",
+      price: "R$ 26,90",
+      image: "/images/lanches/VegierBurguer.avif",
+    },
+    {
+      name: "Barbecue Bacon",
+      description: "Carne, queijo, bacon, cebola caramelizada e molho barbecue.",
+      price: "R$ 31,90",
+      image: "/images/lanches/BbqBacon.jpeg",
+    },
+    {
+      name: "Picanha Especial",
+      description: "Pão brioche, hambúrguer de picanha, queijo prato e maionese temperada.",
+      price: "R$ 36,90",
+      image: "/images/lanches/PicanhaEspecial.webp",
+    },
   ],
   Torradas: [
     {
       name: "Torrada Simples",
       description: "Pão na chapa com manteiga.",
       price: "R$ 6,00",
-      image: "https://picsum.photos/seed/torrada1/400/300",
+      image: "/images/lanches/TorradaSimples.jpg",
     },
     {
       name: "Torrada com Queijo",
       description: "Pão na chapa com queijo derretido.",
       price: "R$ 8,00",
-      image: "https://picsum.photos/seed/torrada2/400/300",
+      image: "/images/lanches/TorradaComQueijo.avif",
+    },
+    {
+      name: "Torrada com Presunto e Queijo",
+      description: "Pão na chapa com presunto e queijo.",
+      price: "R$ 9,50",
+      image: "/images/lanches/TorradaComQueijoPresunto.jpeg",
+    },
+    {
+      name: "Torrada com Requeijão",
+      description: "Pão na chapa com requeijão cremoso.",
+      price: "R$ 8,50",
+      image: "/images/lanches/TorradaComRequeijao.jpg",
+    },
+    {
+      name: "Torrada com Ovo",
+      description: "Pão tostado com ovo frito.",
+      price: "R$ 9,00",
+      image: "/images/lanches/TorradaComOvo.jpg",
+    },
+    {
+      name: "Torrada 4 Queijos",
+      description: "Queijo prato, muçarela, gorgonzola e parmesão.",
+      price: "R$ 11,00",
+      image: "/images/lanches/Torrada4Queijos.webp",
     },
   ],
   Baurus: [
@@ -59,17 +95,40 @@ const menuData: MenuData = {
       name: "Bauru Tradicional",
       description: "Pão francês, presunto, queijo e tomate.",
       price: "R$ 10,90",
-      image: "https://picsum.photos/seed/bauru1/400/300",
+      image: "/images/lanches/BauruTradicional.webp",
     },
     {
       name: "Bauru Especial",
       description: "Presunto, queijo, ovo e orégano.",
       price: "R$ 13,50",
-      image: "https://picsum.photos/seed/bauru2/400/300",
+      image: "/images/lanches/BauruEspecial.webp",
+    },
+    {
+      name: "Bauru Frango",
+      description: "Pão francês, frango desfiado, queijo e tomate.",
+      price: "R$ 12,90",
+      image: "/images/lanches/BauruFrango.jpeg",
+    },
+    {
+      name: "Bauru com Bacon",
+      description: "Presunto, queijo, bacon e maionese.",
+      price: "R$ 14,90",
+      image: "/images/lanches/BauruBacon.jpg",
+    },
+    {
+      name: "Bauru de Calabresa",
+      description: "Calabresa fatiada, queijo e cebola.",
+      price: "R$ 13,90",
+      image: "/images/lanches/BauruCalabresa.jpg",
+    },
+    {
+      name: "Bauru Vegano",
+      description: "Pão integral, legumes grelhados e queijo vegano.",
+      price: "R$ 15,90",
+      image: "/images/lanches/BauruVegano.jpg",
     },
   ],
 }
-
 const categories = Object.keys(menuData) as (keyof typeof menuData)[]
 
 export default function Menu() {
@@ -77,28 +136,28 @@ export default function Menu() {
 
   return (
 <section className="relative w-full min-h-screen text-black" id="menu">
-  {/* Imagem de fundo */}
-  <div className="absolute inset-0 z-0" />
+  {/* Imagem de fundo com Tailwind */}
+  <div className="absolute inset-0 z-0 bg-[url('/cardapio.jpeg')] bg-cover bg-center opacity-30" />
 
-  {/* Camada escura opcional por cima da imagem */}
-  <div className="absolute inset-0 bg-black/30 z-10" />
+  {/* Camada escura opcional */}
+  <div className="absolute inset-0 bg-black/20 z-10" />
 
-  {/* "Folha" central com o cardápio */}
+  {/* Container central com o cardápio */}
   <div className="relative z-20 flex justify-center py-16 px-4">
-    <div className="w-full max-w-3xl bg-white/90 backdrop-blur-md rounded-xl shadow-xl p-8">
+    <div className="w-full max-w-5xl bg-[#fef6ec] rounded-2xl shadow-2xl p-8">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
         Nosso Cardápio
       </h2>
 
-      {/* Abas */}
-      <div className="flex justify-center gap-4 mb-10 flex-wrap">
+      {/* Abas de categoria */}
+      <div className="flex justify-center gap-3 mb-10 flex-wrap">
         {categories.map((category) => (
           <button
             key={category}
-            className={`px-4 py-2 rounded-full font-medium border transition ${
+            className={`px-4 py-2 rounded-full font-medium border transition-all duration-200 ${
               activeTab === category
-                ? 'bg-yellow-500 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-yellow-100'
+                ? 'bg-yellow-500 text-white border-yellow-500'
+                : 'bg-[#fef6ec] text-gray-700 border-gray-300 hover:bg-yellow-100'
             }`}
             onClick={() => setActiveTab(category)}
           >
@@ -107,12 +166,12 @@ export default function Menu() {
         ))}
       </div>
 
-      {/* Itens do menu */}
-      <div className="grid sm:grid-cols-3 gap-6">
+      {/* Itens do cardápio */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {menuData[activeTab].map((item, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md hover:shadow-lg transition overflow-hidden"
+            className="bg-[#fefefe] rounded-xl shadow-md hover:shadow-lg transition-transform hover:scale-105 overflow-hidden"
           >
             <img
               src={item.image}
@@ -120,9 +179,9 @@ export default function Menu() {
               className="w-full h-40 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-lg font-semibold">{item.name}</h3>
-              <p className="text-sm text-gray-600">{item.description}</p>
-              <p className="text-yellow-600 font-bold mt-2">{item.price}</p>
+              <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
+              <p className="text-sm text-gray-600 mt-1">{item.description}</p>
+              <p className="text-yellow-600 font-bold text-right mt-3">{item.price}</p>
             </div>
           </div>
         ))}
@@ -130,5 +189,6 @@ export default function Menu() {
     </div>
   </div>
 </section>
+
   )
 }

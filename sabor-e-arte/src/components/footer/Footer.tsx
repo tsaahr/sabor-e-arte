@@ -1,4 +1,7 @@
 'use client'
+import Link from 'next/link';
+
+<Link href="/" className="hover:text-yellow-400">Início</Link>
 
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
 
@@ -16,18 +19,16 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-3 text-yellow-400">Navegação</h3>
           <ul className="space-y-2 text-gray-300">
-            <li><a href="#" className="hover:text-yellow-400">Início</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Sobre</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Cardápio</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Blog</a></li>
-            <li><a href="#" className="hover:text-yellow-400">Contato</a></li>
+            <li><Link href="/" className="hover:text-yellow-400">Início</Link></li>
+            <li><Link href="/sobre" className="hover:text-yellow-400">Sobre</Link></li>
+            <li><Link href="/contato" className="hover:text-yellow-400">Contato</Link></li>
           </ul>
-        </div>
 
+        </div>
         <div>
           <h3 className="text-lg font-semibold mb-3 text-yellow-400">Contato</h3>
           <ul className="text-gray-300 space-y-2">
-            <li>📍 Socowisk - Rio Grande</li>
+            <li>📍 Praça Shopping - Rio Grande RS</li>
             <li>📞 (53) 99179-9058</li>
             <li>✉️ contato@saborearte.com</li>
             <li className="flex gap-3 mt-2">
