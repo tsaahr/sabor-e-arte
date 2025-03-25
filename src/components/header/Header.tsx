@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Header() {
   return (
@@ -19,10 +19,15 @@ export default function Header() {
             📍 Praça Shopping - Rio Grande RS
           </a>
           <div className="flex gap-2">
-            <FaFacebookF className="hover:text-yellow-400 cursor-pointer" />
-            <FaTwitter className="hover:text-yellow-400 cursor-pointer" />
-            <FaInstagram className="hover:text-yellow-400 cursor-pointer" />
-            <FaYoutube className="hover:text-yellow-400 cursor-pointer" />
+             <Link href="https://www.facebook.com/lithierry.silva.52/" target="_blank" rel="noopener noreferrer">
+                <FaFacebookF className="hover:text-yellow-400 cursor-pointer" />
+              </Link>
+              <Link href="https://www.instagram.com/lithydev/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="hover:text-yellow-400 cursor-pointer" />
+              </Link>
+              <Link href="https://www.youtube.com/@LithierrySilva" target="_blank" rel="noopener noreferrer">
+                <FaYoutube className="hover:text-yellow-400 cursor-pointer" />
+              </Link>
           </div>
         </div>
       </div>
